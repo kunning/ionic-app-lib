@@ -1,5 +1,5 @@
 #main {
-  max-width: 500px;
+  max-width: 600px;
   margin: auto;
 }
 
@@ -10,4 +10,17 @@
 
 .btn-primary:hover {
   background-color: #296dd8;
+}
+
+
+.btn-loud {
+  border-color: #4f8ef7;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 2.6px;
+  margin-top: 11px;
+  outline: none;
+  padding: 19px 15px 17px;
+  transition: .2s background,.2s border-color;
+  width: 100%;
 }
