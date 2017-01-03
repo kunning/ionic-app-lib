@@ -1,0 +1,13 @@
+#main {
+  max-width: 500px;
+  margin: auto;
+}
+
+.btn-primary {
+  background-color: #448BFA;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #296dd8;
+}
