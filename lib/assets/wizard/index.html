@@ -11,35 +11,45 @@
   </head>
   <body ng-controller="AppCtrl">
     <div id="main">
-      <h2>Ionic Start Wizard</h2>
-      <form ng-submit="onSubmit()">
-        <div class="form-group">
-          <label>App Name</label>
-          <input type="text" class="form-control" ng-model="app.name" required>
-        </div>
-        <div class="form-group">
-          <label>Project Directory Name</label>
-          <input type="text" class="form-control" ng-model="app.directory" id="app-directory" required>
-        </div>
-        <div class="form-group">
-          <label>Project Directory Path</label>
-          <input type="text" class="form-control" ng-model="app.path" id="app-path">
-          <p class="help-block">Leave empty to use current directory (<code><span ng-bind="env.cwd"></span></code>)</p>
-        </div>
-        <div class="form-group">
-          <label>App ID</label>
-          <input type="text" class="form-control" ng-model="app.id" id="app-id" required>
-        </div>
-        <div class="form-group">
-          <label>Starting Template</label>
-          <select class="form-control" ng-model="app.template">
-            <option value="super">Super Starter</option>
-            <option value="tabs">Tabs</option>
-            <option value="sidemenu">Menu</option>
-            <option value="blank">Blank</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary btn-loud">Create App</button>
-      </form>
+      <div id="step-1" ng-controller="Step1Ctrl">
+        <h2 class="title">Create Ionic App</h2>
+        <form ng-submit="onSubmit()">
+          <div class="form-group">
+            <label>App Name</label>
+            <input type="text" class="form-control" ng-model="app.name" required>
+          </div>
+          <div class="form-group">
+            <label>Project Directory Name</label>
+            <input type="text" class="form-control" ng-model="app.directory" id="app-directory" required>
+          </div>
+          <div class="form-group">
+            <label>Project Directory Path</label>
+            <input type="text" class="form-control" ng-model="app.path" id="app-path">
+            <p class="help-block">Leave empty to use current directory (<code><span ng-bind="env.cwd"></span></code>)</p>
+          </div>
+          <div class="form-group">
+            <label>App ID</label>
+            <input type="text" class="form-control" ng-model="app.id" id="app-id" required>
+          </div>
+          <div class="form-group">
+            <label>Starting Template</label>
+            <select class="form-control" ng-model="app.template">
+              <option value="super">Super Starter</option>
+              <option value="tabs">Tabs</option>
+              <option value="sidemenu">Menu</option>
+              <option value="blank">Blank</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-loud">Create App</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="loading" ng-show="loading">
+      <div class="loading-wrap">
+        <img src="loading.gif">
+        <span ng-bind="loadingMessage"></span>
+      </div>
+    </div>
   </body>
 </html>
